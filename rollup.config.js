@@ -14,13 +14,13 @@ const pkg = {
 
 export default [
   {
-    input: `src/lib/impression.js`,
+    input: 'src/lib/impression.js',
     output: {
-      name: `impression`,
+      name: 'impression',
       file: pkg.all,
       sourcemap: true,
       strict: true,
-      format: `umd`
+      format: 'umd'
     },
     plugins: [
       resolve({
