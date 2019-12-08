@@ -1,8 +1,10 @@
+import path from 'path'
 import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import replace from 'rollup-plugin-replace'
 import babelconfig from './.babelrc.json'
+import alias from 'rollup-plugin-alias'
 
 const pkgName = 'impression'
 const pkg = {
@@ -11,6 +13,8 @@ const pkg = {
   module: `dist/${pkgName}.esm.js`,
   browser: `dist/${pkgName}.umd.js`
 }
+
+const ROOT_DIR = path.resolve(process.cwd())
 
 export default [
   {
@@ -23,6 +27,13 @@ export default [
       format: 'umd'
     },
     plugins: [
+      alias({
+        resolve: ['.js'],
+        entries: [
+          { find: '@', replacement: path.resolve(ROOT_DIR) },
+          { find: 'env', replacement: path.resolve(ROOT_DIR, 'src/common/env') }
+        ]
+      }),
       resolve({
         mainFields: [
           'module',
