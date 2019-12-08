@@ -14,7 +14,7 @@ const pkg = {
 
 export default [
   {
-    input: 'src/lib/impression.js',
+    input: 'src/lib/index.js',
     output: {
       name: 'impression',
       file: pkg.all,
