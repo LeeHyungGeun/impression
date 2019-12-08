@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Impression</title>
+  <style>
+    #container > div {
+      margin-top: 500px;
+    }
+    #wrap-1 {
+      padding: 50px;
+      background: red;
+    }
+    #wrap-2 {
+      padding: 100px;
+      background: blue;
+    }
+  </style>
+  <script src="../dist/impression.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="wrap-1"></div>
+
+    <div id="wrap-2"></div>
+  </div>
+  <script>
+    const impression = window.impression;
+
+    const $wrap1 = document.querySelector('#wrap-1');
+    const $wrap2 = document.querySelector('#wrap-2');
+
+    impression.add($wrap1).then((element) => {
+      console.log('impressed: ');
+      console.log(element);
+    });
+  </script>
+</body>
+</html>
