@@ -1,0 +1,19 @@
+{
+  "moduleNameMapper": {
+    "\\.(css|styl|less|sass|scss)$": "<rootDir>/test/mock/styleMock.js",
+    "@/(.*)$": "<rootDir>/src/$1",
+    "@src/lib/(.*)$": "<rootDir>/src/lib/$1"
+  },
+  "moduleFileExtensions": [
+    "js",
+    "json"
+  ],
+  "setupFiles": [
+    "<rootDir>/test/unit/jest.setup.js"
+  ],
+  "testPathIgnorePatterns": [
+  ],
+  "transform": {
+    "^.+\\.js$": "<rootDir>/config/babelAtJest.js"
+  }
+}

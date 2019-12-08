@@ -1,0 +1,47 @@
+{
+  "name": "impression",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development $(npm bin)/rollup -w -c",
+    "test": "jest --config jest.config.json",
+    "lint": "$(npm bin)/eslint src/",
+    "fix": "$(npm bin)/eslint src/ --fix && prettier src/**/*.js src/*.js --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeeHyungGeun/impression.git"
+  },
+  "keywords": [
+    "impression",
+    "lazyload"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeeHyungGeun/impression/issues"
+  },
+  "homepage": "https://github.com/LeeHyungGeun/impression#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "rollup": "^1.27.6",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-uglify": "^6.0.3"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.7.4"
+  }
+}
