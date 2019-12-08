@@ -9,7 +9,7 @@ class Impression {
 
   _constructor(el) {
     if (typeof el === 'string') {
-      this._el = document.querySelector(el)
+      el = document.querySelector(el)
     }
 
     if (!el) {
