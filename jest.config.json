@@ -1,6 +1,7 @@
 {
   "moduleNameMapper": {
     "\\.(css|styl|less|sass|scss)$": "<rootDir>/test/mock/styleMock.js",
+    "env": "<rootDir>/src/common/env.js",
     "@/(.*)$": "<rootDir>/src/$1",
     "@src/lib/(.*)$": "<rootDir>/src/lib/$1"
   },
@@ -8,6 +9,7 @@
     "js",
     "json"
   ],
+  "testEnvironment": "jsdom",
   "setupFiles": [
     "<rootDir>/test/unit/jest.setup.js"
   ],
