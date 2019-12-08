@@ -1,11 +1,10 @@
+import env from 'env'
 import Impression from './impression'
 
-const NAMESPACE = 'impression'
+window[env.NAMESPACE] = window[env.NAMESPACE] || {}
 
-window[NAMESPACE] = window[NAMESPACE] || {}
-
-if (!window[NAMESPACE].add) {
-  /*const add = */(window[NAMESPACE].add = function(element, dataAttrs = {}) {
+if (!window[env.NAMESPACE].add) {
+  /*const add = */(window[env.NAMESPACE].add = function(element, dataAttrs = {}) {
     const { _el } = new Impression(element, dataAttrs)
     
     return Promise.resolve()
@@ -13,8 +12,8 @@ if (!window[NAMESPACE].add) {
         return _el
       })
   })
-
-  window[NAMESPACE].version = '0.0.1'
+  
+  window[env.NAMESPACE].version = '0.0.1'
 }
 
-export default window[NAMESPACE]
+export default window[env.NAMESPACE]
