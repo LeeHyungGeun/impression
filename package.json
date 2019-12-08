@@ -2,7 +2,7 @@
   "name": "impression",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "src/lib/index.js",
   "scripts": {
     "start": "NODE_ENV=development $(npm bin)/rollup -w -c",
     "test": "jest --config jest.config.json",
